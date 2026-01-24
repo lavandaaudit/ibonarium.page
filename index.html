@@ -6,17 +6,12 @@
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex,nofollow">
 <title>off-grid font lab</title>
-
-<!-- GOOGLE FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Playfair+Display:wght@400;600&family=Inter:wght@400;600&family=Cinzel:wght@400;600&family=Cormorant+Garamond:wght@400;600&family=Orbitron:wght@400;600&family=Source+Serif+4:wght@400;600&family=Syne:wght@400;600&family=EB+Garamond:wght@400;600&family=Unbounded:wght@400;600&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
-
 <style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 html, body {
   width: 100%;
   height: 100%;
@@ -24,174 +19,77 @@ html, body {
   overflow: hidden;
   color: #cfefff;
 }
-
-/* STARFIELD */
 canvas {
   position: fixed;
   inset: 0;
   z-index: 0;
 }
-
-/* CONTENT */
-.panel {
-  position: relative;
+.footer {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: system-ui, sans-serif;
+  font-size: 11px;
+  opacity: 0.4;
+  letter-spacing: 0.5px;
+  pointer-events: none;
   z-index: 1;
-  padding: 40px;
-  max-width: 1200px;
 }
-
-.sample {
-  margin-bottom: 28px;
-}
-
-.label {
-  font-size: 12px;
-  opacity: 0.6;
-  letter-spacing: 0.2em;
-  margin-bottom: 6px;
-}
-
-.text {
-  font-size: 28px;
-  line-height: 1.3;
-}
-
-/* FONTS */
-.f1  { font-family: 'Space Grotesk', sans-serif; }
-.f2  { font-family: 'IBM Plex Serif', serif; }
-.f3  { font-family: 'Playfair Display', serif; }
-.f4  { font-family: 'Inter', sans-serif; }
-.f5  { font-family: 'Cinzel', serif; letter-spacing: 0.05em; }
-.f6  { font-family: 'Cormorant Garamond', serif; }
-.f7  { font-family: 'Orbitron', sans-serif; letter-spacing: 0.08em; }
-.f8  { font-family: 'Source Serif 4', serif; }
-.f9  { font-family: 'Syne', sans-serif; }
-.f10 { font-family: 'EB Garamond', serif; }
-.f11 { font-family: Helvetica, Arial, sans-serif; }
-.f12 { font-family: 'Unbounded', sans-serif; }
-.f13 { font-family: 'Crimson Pro', serif; }
-
 </style>
 </head>
-
 <body>
 
 <canvas id="stars"></canvas>
 
-<div class="panel">
-
-  <div class="sample f1">
-    <div class="label">01 — Space Grotesk / техно-лабораторний</div>
-    <div class="text">underground cosmo dynamic lab live</div>
-  </div>
-
-  <div class="sample f2">
-    <div class="label">02 — IBM Plex Serif / науковий</div>
-    <div class="text">underground cosmo dynamic lab live</div>
-  </div>
-
-  <div class="sample f3">
-    <div class="label">03 — Playfair Display / арт-журнал</div>
-    <div class="text">underground cosmo dynamic lab live</div>
-  </div>
-
-  <div class="sample f4">
-    <div class="label">04 — Inter / digital UI</div>
-    <div class="text">underground cosmo dynamic lab live</div>
-  </div>
-
-  <div class="sample f5">
-    <div class="label">05 — Cinzel / ритуал-космос</div>
-    <div class="text">underground cosmo dynamic lab live</div>
-  </div>
-
-  <div class="sample f6">
-    <div class="label">06 — Cormorant Garamond / філософія</div>
-    <div class="text">underground cosmo dynamic lab live</div>
-  </div>
-
-  <div class="sample f7">
-    <div class="label">07 — Orbitron / sci-fi сигнал</div>
-    <div class="text">underground cosmo dynamic lab live</div>
-  </div>
-
-  <div class="sample f8">
-    <div class="label">08 — Source Serif 4 / академічний</div>
-    <div class="text">underground cosmo dynamic lab live</div>
-  </div>
-
-  <div class="sample f9">
-    <div class="label">09 — Syne / андеграунд платформа</div>
-    <div class="text">underground cosmo dynamic lab live</div>
-  </div>
-
-  <div class="sample f10">
-    <div class="label">10 — EB Garamond / класика</div>
-    <div class="text">underground cosmo dynamic lab live</div>
-  </div>
-
-  <div class="sample f11">
-    <div class="label">11 — Helvetica / нейтральна лабораторія</div>
-    <div class="text">underground cosmo dynamic lab live</div>
-  </div>
-
-  <div class="sample f12">
-    <div class="label">12 — Unbounded / експеримент майбутнього</div>
-    <div class="text">underground cosmo dynamic lab live</div>
-  </div>
-
-  <div class="sample f13">
-    <div class="label">13 — Crimson Pro / трактат</div>
-    <div class="text">underground cosmo dynamic lab live</div>
-  </div>
-
+<div class="footer">
+  ibonarium.cosmo.dynamics.lab.live.2026.lavanda.audit.ibonarium.project.2026
 </div>
 
 <script>
 // ===== OFF-GRID STARFIELD =====
 const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
-
 let W, H;
 let stars = [];
 
 function resize() {
   W = canvas.width = window.innerWidth;
   H = canvas.height = window.innerHeight;
-
   stars = Array.from({ length: 160 }, () => ({
     x: Math.random() * W,
     y: Math.random() * H,
     z: Math.random() * W
   }));
 }
+
 resize();
 window.addEventListener("resize", resize);
 
 function render() {
   ctx.fillStyle = "#000";
   ctx.fillRect(0, 0, W, H);
-
+  
   ctx.fillStyle = "#4dd2ff";
-
   for (let s of stars) {
     s.z -= 0.25;
     if (s.z <= 0) s.z = W;
-
+    
     const k = 128 / s.z;
     const x = (s.x - W / 2) * k + W / 2;
     const y = (s.y - H / 2) * k + H / 2;
-
+    
     if (x > 0 && x < W && y > 0 && y < H) {
       const size = (1 - s.z / W) * 2;
       ctx.fillRect(x, y, size, size);
     }
   }
-
+  
   requestAnimationFrame(render);
 }
+
 render();
 </script>
-
 </body>
 </html>
